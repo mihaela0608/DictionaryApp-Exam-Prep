@@ -10,56 +10,56 @@
         <h1>All words</h1>
         <div class="row mt-3 mb-3">
 
-            <div class="col-5 bg-dark rounded m-auto" style="height: 30vh; overflow: auto">
-                <h3 class="mySticky bg-gray text-dark rounded">German: {germanWordsCount}</h3>
-                    <div class="mt-3 rounded badge-warning">
+            <div class="col-5 bg-dark rounded m-auto" style="height: 30vh; overflow: auto" th:object="${german}">
+                <h3 class="mySticky bg-gray text-dark rounded">German: <span th:text="${#lists.size(german)}"></span></h3>
+                    <div class="mt-3 rounded badge-warning" th:each="gWord: ${german}">
                         <img class="mr-2" src="/img/german.png" alt="Flag" width="20px" height="20px">
-                        <span>{germanTerm}: {translation}</span>
+                        <span><span th:text="${gWord.term}"></span>: <span th:text="${gWord.translation}"></span></span>
                         <br>
-                        <span>Example: {example}</span>
+                        <span>Example: <span th:text="${gWord.example}"></span></span>
                         <br>
-                        <span>Added by: {username} on {inputDate}</span>
+                        <span>Added by: <span th:text="${gWord.addedBy.username}"></span> on <span th:text="${gWord.inputDate}"></span></span>
                         <a class="ml-3 text-danger" href="/">Remove</a>
                     </div>
             </div>
 
-            <div class="col-5 bg-dark rounded m-auto" style="height: 30vh; overflow: auto">
-                <h3 class="mySticky bg-gray text-dark rounded">Spanish: {spanishWordsCount}</h3>
-                    <div class="mt-3 rounded badge-secondary">
+            <div class="col-5 bg-dark rounded m-auto" style="height: 30vh; overflow: auto" th:object="${spanish}">
+                <h3 class="mySticky bg-gray text-dark rounded">Spanish: <span th:text="${#lists.size(spanish)}"></span></h3>
+                    <div class="mt-3 rounded badge-secondary" th:each="sWord: ${spanish}">
                         <img class="mr-2" src="/img/spanish.png" alt="Flag" width="20px" height="20px">
-                        <span>{spanishTerm}: {translation}</span>
+                        <span><span th:text="${sWord.term}"></span>: <span th:text="${sWord.translation}"></span></span>
                         <br>
-                        <span>Example: {example}</span>
+                        <span>Example: <span th:text="${sWord.example}"></span></span>
                         <br>
-                        <span>Added by: {username} on {inputDate}</span>
+                        <span>Added by: <span th:text="${sWord.addedBy.username}"></span> on <span th:text="${sWord.inputDate}"></span></span>
                         <a class="ml-3 text-danger" href="/">Remove</a>
                     </div>
             </div>
         </div>
 
         <div class="row mt-3 mb-3">
-            <div class="col-5 bg-dark rounded m-auto" style="height: 30vh; overflow: auto">
-                <h3 class="mySticky bg-gray text-dark rounded">French: {frenchWordsCount}</h3>
-                    <div class="mt-3 rounded badge-info">
+            <div class="col-5 bg-dark rounded m-auto" style="height: 30vh; overflow: auto" th:object="${french}">
+                <h3 class="mySticky bg-gray text-dark rounded">French: <span th:text="${#lists.size(french)}"></span></h3>
+                    <div class="mt-3 rounded badge-info" th:each="fWord: ${french}">
                         <img class="mr-2" src="/img/french.png" alt="Flag" width="20px" height="20px">
-                        <span>{frenchTerm}: {translation}</span>
+                        <span><span th:text="${fWord.term}"></span>: <span th:text="${fWord.translation}"></span></span>
                         <br>
-                        <span>Example: {example}</span>
+                        <span>Example: <span th:text="${fWord.example}"></span></span>
                         <br>
-                        <span>Added by: {username} on {inputDate}</span>
+                        <span>Added by: <span th:text="${fWord.addedBy.username}"></span> on <span th:text="${fWord.inputDate}"></span></span>
                         <a class="ml-3 text-danger" href="/">Remove</a>
                     </div>
             </div>
 
-            <div class="col-5 bg-dark rounded m-auto" style="height: 30vh; overflow: auto">
-                <h3 class="mySticky bg-gray text-dark rounded">Italian: {italianWordsCount}</h3>
-                    <div class="mt-3 rounded badge-success">
+            <div class="col-5 bg-dark rounded m-auto" style="height: 30vh; overflow: auto" th:object="${italian}">
+                <h3 class="mySticky bg-gray text-dark rounded">Italian: <span th:text="${#lists.size(italian)}"></span></h3>
+                    <div class="mt-3 rounded badge-success" th:each="iWord: ${italian}">
                         <img class="mr-2" src="/img/italian.png" alt="Flag" width="20px" height="20px">
-                        <span>{italianTerm}: {translation}</span>
+                        <span><span th:text="${iWord.term}"></span>: <span th:text="${iWord.translation}"></span></span>
                         <br>
-                        <span>Example: {example}</span>
+                        <span>Example: <span th:text="${iWord.example}"></span></span>
                         <br>
-                        <span>Added by: {username} on {inputDate}</span>
+                        <span>Added by: <span th:text="${iWord.addedBy.username}"></span> on <span th:text="${iWord.inputDate}"></span></span>
                         <a class="ml-3 text-danger" href="/">Remove</a>
                     </div>
             </div>
